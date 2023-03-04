@@ -12,7 +12,9 @@ module.exports = async (Discord, client, interaction) =>
         inServer: true,
         cooldowns: {
             baltop: new Date('2000-01-01T00:00:00'),
-            lastMessage: new Date('2000-01-01T00:00:00')
+            lastMessage: new Date('2000-01-01T00:00:00'),
+            rob: new Date('2000-01-01T00:00:00'),
+            gotRobbed: new Date('2000-01-01T00:00:00')
         }
     })
 

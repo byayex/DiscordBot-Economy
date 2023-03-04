@@ -7,7 +7,12 @@ let Members = new Schema({
     inServer: Boolean,
     cooldowns: {
         baltop: Date,
-        lastMessage: Date
+        lastMessage: Date,
+        rob: Date,
+        gotRobbed: Date
+    },
+    inventory: {
+
     }
 })
 

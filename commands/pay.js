@@ -52,8 +52,6 @@ module.exports = {
         {
             userData.balance -= amount;
             targetData.balance += amount;
-            userData.save()
-            targetData.save()
             let sent_coins = new EmbedBuilder()
             .setColor('Blue')
             .setTitle(`You sent 🪙 ${amount} Coins to "${target.tag}"`)
@@ -79,5 +77,7 @@ module.exports = {
             .setTimestamp()
             interaction.reply({embeds: [not_enough_coins], ephemeral: true})
         }
+        userData.save()
+        targetData.save()
     }
 };

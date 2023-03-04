@@ -12,9 +12,9 @@ module.exports = {
         const userData = await Members.findOne({memberID: interaction.member.id})
 
         let difference = new Date() - userData.cooldowns.baltop;
-        let timestamp_unlocked = Math.round(userData.cooldowns.baltop.getTime()/1000 + 60*15) // Runterrechnen auf Sekunden da Discords Timeformatting nur in sekunden geht.
+        let timestamp_unlocked = Math.round(userData.cooldowns.baltop.getTime()/1000 + 60*15) // Calculating in Seconds and add the 15 minutes
 
-        if(difference/1000/60 > 15) // 15 Minuten
+        if(difference/1000/60 > 15) // 15 minutes
         {
             const userDatas = await Members.find({inServer: true});
 
