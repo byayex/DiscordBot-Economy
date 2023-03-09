@@ -9,10 +9,15 @@ let Members = new Schema({
         baltop: Date,
         lastMessage: Date,
         rob: Date,
-        gotRobbed: Date
+        gotRobbed: Date,
+        lastCollect: Date
     },
     inventory: {
-
+        kiosk: Number,
+        gasStation: Number,
+        supermarket: Number,
+        jeweler: Number,
+        realEstate: Number
     }
 })
 

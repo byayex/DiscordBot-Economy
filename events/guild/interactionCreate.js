@@ -14,7 +14,15 @@ module.exports = async (Discord, client, interaction) =>
             baltop: new Date('2000-01-01T00:00:00'),
             lastMessage: new Date('2000-01-01T00:00:00'),
             rob: new Date('2000-01-01T00:00:00'),
-            gotRobbed: new Date('2000-01-01T00:00:00')
+            gotRobbed: new Date('2000-01-01T00:00:00'),
+            lastCollect: new Date('2000-01-01T00:00:00')
+        },
+        inventory: {
+            kiosk: 0,
+            gasStation: 0,
+            supermarket: 0,
+            jeweler: 0,
+            realEstate: 0
         }
     })
 

@@ -45,18 +45,30 @@ module.exports = {
                 return interaction.reply({embeds: [emb], ephemeral: true})
             }
 
-            userData.inServer = true
-            targetData.inServer = true;
+            let amount_robbed = Math.floor(Math.random() * (26 - 1) + 1);
 
-            let amount_robbed = Math.floor(Math.random() * (101 - 25) + 25);
-            userData.balance += amount_robbed;
+            if(targetData.balance < amount_robbed)
+            {
+                let emb = new EmbedBuilder()
+                .setTitle('The target has not enough money!')
+                .setDescription(`Try robbing this person again or rob someone else`)
+                .setColor('Red')
+                .setTimestamp()
+                return interaction.reply({embeds: [emb], ephemeral: true})
+            }
+
+            userData.inServer = true
+            targetData.inServer = true
+
+            userData.balance += amount_robbed
+            targetData.balance -= amount_robbed
             targetData.cooldowns.gotRobbed = new Date()
             userData.cooldowns.rob = new Date()
 
             let emb = new EmbedBuilder()
             .setColor('Blue')
             .setTitle(`You robbed "${target.tag}"`)
-            .setDescription(`Earnings: ${amount_robbed}`)
+            .setDescription(`**Earnings: ${amount_robbed}**`)
             .setTimestamp()
             interaction.reply({embeds: [emb], ephemeral: true})
         }else
